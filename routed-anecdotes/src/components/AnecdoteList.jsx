@@ -1,0 +1,27 @@
+import { useEffect } from 'react';
+import { useAnecdotes } from '../hooks';
+
+const AnecdoteList = () => {
+  const { anecdotes, deleteAnecdote } = useAnecdotes();
+  useEffect(() => {
+    console.log('updating...');
+    //update();
+  },[]);
+  return(
+    <div>
+      <h2>Anecdotes</h2>
+      <ul>
+        {anecdotes.map(anecdote => {
+          return(
+            <li key={anecdote.id}>{anecdote.content}
+              <button onClick={() => deleteAnecdote(anecdote)}>delete</button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default AnecdoteList;
+//             <button onClick={()=>del(anecdote)}/>
