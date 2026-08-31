@@ -1,0 +1,7 @@
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "javascript"] }
+auto-format = true
+
+in ~/.config/helix/config.toml would likely make it work. helix has a build in
+formating based on the language server so it's bit of a headache to go against
